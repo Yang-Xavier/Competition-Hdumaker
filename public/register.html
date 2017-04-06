@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="arduino HDUMaker" />
+
+    <title>参赛报名</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/register.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" rel="stylesheet">
+</head>
+<body>
+<div style="width: 100%;" class="back">
+    <div ></div>
+    <button type="button" class="btn" style="font-size: 1.3em;" onclick="history.go(-1)">
+        <span class="glyphicon glyphicon-arrow-left"></span>
+        返回
+    </button>
+</div>
+
+<div class="header">
+    <h1>报名表</h1>
+</div>
+<div class="container">
+    <h5>报名须知:</h5>
+    <p></p>
+    <form>
+        <div class="form-group required-validate" >
+            <label>学校</label>
+            <select class="form-control" name="school">
+                <option>请选择学校</option>
+                <option>杭州电子科技大学</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>队伍名</label>
+            <input id="teamName" class="form-control" type="text" placeholder="请输入队伍名..." name="teamName"  data-bv-notempty>
+        </div>
+        <div class="form-group">
+            <label>负责人</label>
+            <input id="leaderName" class="form-control" type="text" placeholder="请输入负责人姓名..." name="leaderName" data-bv-notempty>
+        </div>
+        <div class="form-group">
+            <label>负责人联系方式</label>
+            <input id="leaderPhone" class="form-control" type="tel" placeholder="请输入手机号..." name="leaderPhone" data-bv-notempty>
+        </div>
+        <div class="form-group">
+            <label>负责人邮箱</label>
+            <input id="leaderEmail" class="form-control" type="email" placeholder="请输入邮箱..." name="leaderEmail" data-bv-notempty>
+        </div>
+        <div class="form-group">
+            <label>队伍人数</label>
+            <input id="teamMember" class="form-control" type="number" placeholder="参赛人数至少一人，至多五人(包括负责人)" name="teamMember" data-bv-notempty>
+        </div>
+
+        <div id="dynamicInput">
+
+
+        </div>
+
+        <div class="form-group">
+            <label>作品名称</label>
+            <input id="productName" class="form-control" type="text" placeholder="请输入作品名称..." name="productName" data-bv-notempty>
+        </div>
+        <div class="form-group">
+            <label>作品简介</label>
+            <textarea id="productIntro" class="form-control"  placeholder="200字以内..." style="resize: none" name="productIntro" data-bv-notempty></textarea>
+        </div>
+        <div class="buttonGroup">
+            <span id="reset" class="form-group">
+                <button  class="btn" onclick="location.reload()">
+                    重置
+                </button>
+            </span>
+            <span id="submit" class="form-group">
+                <button onclick="s()"  class="btn">
+                    提交
+                </button>
+            </span>
+        </div>
+        <div class="clearfix"></div>
+    </form>
+
+</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+
+<script>
+    $(function(){
+        $('#teamMember').change(function(){
+            var num=$(this).val();
+            if(num<=1||num>5){
+                return;
+            }
+            var html=[];
+            for(var i=2;i<=num;i++){
+                html.push(createForm(i))
+            }
+            $('#dynamicInput').html(html.join(''))
+
+        })
+
+
+        $('form').bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fieldes:{
+                school:{
+                    validators: {
+                        notEmpty: {
+                            message: '请选择学校'
+                        }
+                    }
+                },
+                teamName:{
+                    validators: {
+                        notEmpty: {
+                            message: '团队名不能为空'
+                        }
+                    }
+                },
+                leaderName:{
+                    validators: {
+                        notEmpty: {
+                            message: '请输入负责人'
+                        }
+                    }
+                },
+                leaderPhone:{
+                    validators: {
+                        notEmpty: {
+                            message: '请输入手机号'
+                        }
+                    }
+                },
+                leaderEmail:{
+                    validators: {
+                        notEmpty: {
+                            message: '请输入邮箱'
+                        }
+                    }
+                },
+                teamMember:{
+                    validators: {
+                        notEmpty: {
+                            message: '请输入团队人数'
+                        }
+                    }
+                },
+                productName:{
+                    validators: {
+                        notEmpty: {
+                            message: '请输入项目名称'
+                        }
+                    }
+                }
+                ,
+                productIntro:{
+                    validators: {
+                        notEmpty: {
+                            message: '请输入项目简介'
+                        }
+                    }
+                }
+
+            }
+        })
+
+    })
+    function createForm(i){
+        var html='<div class="form-group">' +
+            ' <h4>第'+i+'位小伙伴</h4> ' +
+            '<span> ' +
+            '<label>姓名</label> ' +
+            '<input class="form-control" type="text" placeholder="请输入名字..." data-bv-notempty name="memberName'+i+'"> ' +
+            '</span> ' +
+            '<span class="form-group"> ' +
+            '<label>手机号</label> ' +
+            '<input class="form-control" type="tel" placeholder="请输入手机号..." data-bv-notempty name="memberTel'+i+'"> ' +
+            '</span> ' +
+            '</div>'
+        return html
+    }
+
+    function finalCheck(){
+        var a=true;
+        $('input').toArray().forEach(function(input){
+            if(input.value.length===0){
+                a=false;
+            }
+        });
+        if($('#teamMember').val()<1||$('#teamMember').val()>5){
+            a=false
+        }
+        ($('select').val()==="请选择学校")&&(a=false);
+        ($('textarea').val().length===0)&&(a=false)
+        return a;
+    }
+
+    function s(){
+        if(!finalCheck()){
+            alert("请检查信息是否填写完整");
+            return;
+        }
+        var data={};
+        $('input').toArray().forEach(function(input){
+            input=$(input);
+            if(/[0-9]$/.test(input.attr('name'))) return;
+            data[input.attr('name')]=input.val();
+        })
+        data.school=$("select").val();
+        data.productIntro=$("textarea").val();
+
+        if(data.teamMember!="1"){
+            data.members=[];
+
+            $('#dynamicInput')
+                .find("div.form-group")
+                .toArray()
+                .forEach(function(ele){
+                    var a={};
+                    var member=$(ele).find("input[type=text]");
+                    var tel=$(ele).find("input[type=tel]");
+                    a[member.attr('name')]=member.val();
+                    a[tel.attr('name')]=tel.val();
+
+                    data.members.push(a);
+                })
+
+        }
+
+
+        data=data.toString().replace('>','%3e');
+
+        console.log(data)
+
+    }
+</script>
+
+</body>
+</html>

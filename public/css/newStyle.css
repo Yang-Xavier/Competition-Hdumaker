@@ -1,0 +1,129 @@
+.about,.gallery{
+    background-color: #fff;
+}
+.reward{
+    list-style: none;
+    width: 100%;
+}
+.reward li div h3{
+    color: #eeeeee;
+}
+.reward li div h4{
+    color: #aaaaaa;
+
+}
+.reward li{
+    padding: 10px 10px;
+}
+.reward li img{
+    padding: 10px 10px;
+}
+.reward h3,.reward h4{
+    text-align: center;
+    padding: 10px 10px;
+}
+.pro{
+    padding-top: 10px;
+}
+.pro-grid{
+    text-align: center;
+}
+.pro-top{
+    padding-top: 10px;
+}
+.pro-top h4,.pro-top p{
+    text-align: center;
+}
+.pro-top h4{
+    font-size: 22px;
+    line-height: 40px;
+    color: #8EC358;
+}
+.pro-top p{
+    line-height: 40px;
+    color: #cdcdcd;
+    font-weight:600;
+}
+.arrow-right{
+    height: 170px;
+    /*background-color: red;*/
+    position: relative;
+    animation: arrow 1.5s linear infinite;
+
+}
+.arrow-right:before,.arrow-right:after{
+    content: ' ';
+    position: absolute;
+    width:25px;
+    height: 25px;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(-45deg);
+    top:73px;
+    left: -10px;
+}
+.arrow-right:after{
+    left: 25px;
+}
+
+.register div{
+    display: inline-block;
+    width: 6em;
+    height: 3.5em;
+    padding: 1em 1em;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+    /*border: 1px solid black;*/
+
+}
+
+.register div a{
+    position: absolute;
+    display: block;
+    z-index: 100;
+}
+
+@media (min-width:768px) {
+
+
+    .register div:before{
+        position: absolute;
+        content: ' ';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background-color: #cc7421;
+
+        left: -10px;top:-10px;
+
+        opacity: 0.5;
+        z-index: 1;
+        transition: all 0.5s linear;
+    }
+    .register div:hover{
+        cursor: pointer;
+    }
+    .register div:hover a{
+        color: #000;
+    }
+    .register div:hover::before{
+        cursor: pointer;
+
+        opacity: 0.2;
+        transform: scale(30,30);
+    }
+
+}
+
+@keyframes arrow {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        transform: translateX(10px);
+         }
+}

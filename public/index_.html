@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="arduino HDUMaker" />
+<script type="application/x-javascript">
+	addEventListener("load", function() {
+	    setTimeout(hideURLbar, 0);
+	}, false);
+		function hideURLbar(){
+		    window.scrollTo(0,1);
+		}
+</script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/newStyle.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/chocolat.css" rel="stylesheet">
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>-->
+	<!-- start-smoth-scrolling -->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+	<!-- start-smoth-scrolling -->
+</head>
+<body>
+<!-- header -->
+<div class="header">
+	<div class="container">
+		<div class="header-left">
+			<p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>Phone:+128-546-6853</p>
+		</div>
+		<div class="header-right">
+			<ul>
+				<li><a href="mailto:sample@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>info@example.com</a></li>
+				<li>|</li>
+				<li><a class="scroll" href="#contact">Contact</a></li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+ <!--//header -->
+<!-- navigation -->
+<div class="navigation">
+	<div class="container">
+		<div class="logo">
+			<h1><a href="#">Arduino开发大赛</a></h1>
+		</div>
+		<nav class="navbar navbar-default">
+			 <!--Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<!--<span class="sr-only">Toggle navigation</span>-->
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+
+			<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="hvr-bounce-to-bottom button"><a href="#about" class="scroll">关于<span class="sr-only">(current)</span></a></li>
+					<li class="hvr-bounce-to-bottom button"><a href="#progress" class="scroll">赛程</a></li>
+					<li class="hvr-bounce-to-bottom button"><a href="#reward" class="scroll">奖励</a></li>
+					<li class="hvr-bounce-to-bottom button"><a href="#team" class="scroll">我们</a></li>
+				</ul>
+
+			  <div class="social-icons register">
+
+				  <div>
+					  <a href="/register" class="">
+						  立即报名
+					  </a>
+				  </div>
+			  </div>
+			  <div class="clearfix"></div>
+			</div>
+			<!-- /.navbar-collapse -->
+		</nav>
+	</div>
+</div>
+<!-- //navigation -->
+<!-- banner -->
+<div class="banner">
+	<div class="container">
+		<script src="js/responsiveslides.min.js"></script>
+			<script>
+									// You can also use "$(window).load(function() {"
+									$(function () {
+									 // Slideshow 4
+									$("#slider3").responsiveSlides({
+										auto: true,
+										pager: true,
+										nav: false,
+										speed: 500,
+										namespace: "callbacks",
+										before: function () {
+									$('.events').append("<li>before event fired.</li>");
+									},
+									after: function () {
+										$('.events').append("<li>after event fired.</li>");
+										}
+										});
+										});
+			</script>
+			<div  id="top" class="callbacks_container">
+
+				<ul class="rslides" id="slider3">
+					<li>
+						<div class="banner-info">
+							<h3>2017手势控制主题Arduino大赛</h3>
+							<!--<h4>想法当现实！</h4>-->
+						</div>
+					</li>
+					<li>
+						<div class="banner-info">
+							<h3>参赛对象：浙江省在校大学生</h3>
+							<!--<h4>Industry is well commented and performance over the years.</h4>							-->
+						</div>
+					</li>
+					<li>
+						<div class="banner-info">
+							<h3>Let's make something interesting!</h3>
+							<!--<h4>Industrial and commercial equipment manufacturer and exporter.</h4>							-->
+						</div>
+					</li>
+				</ul>
+			</div>
+	</div>
+</div>
+<!-- //banner -->
+<!-- about -->
+<div id="about" class="about">
+	<div class="container">
+		<h3 class="tittle">关于比赛</h3>
+		<h5>本次比赛主题定在手势控制，因为手势控制体感等交互方式在人机交互领域已经越来越重要，比赛希望借此机会激发更多交互上的创意创新，以及人们对于新交互方式的理解。
+		</h5>
+		<div class="about-grids">
+			<div class="col-md-5 abt-left">
+				<img src="images/arduino.jpg" alt="Arduino" />
+			</div>
+			<div class="col-md-7 abt-right">
+				<h4>大赛宗旨</h4>
+				<p>比赛以宣传创客精神为主旨，通过让参赛选手切实感受到Arduino的 易用性和便利性，明确“想法当实现”的口号不是空穴来风，通过更 加人性化智能化的开发工具，自己动手实现创意想法已经变得越来越 现实。而“自己动手做”，本就是创客的本质与初衷通过激发大家的 动手兴趣与能力，为创客精神的宣扬打下坚实的基础。
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- 赛事流程 -->
+<div id="progress" class="services">
+	<div class="container">
+		<h2 class="tittle">赛事流程</h2>
+		<div class="row pro">
+			<div class="col-sm-3 col-xs-12 col-md-3 ">
+				<div class="pro-grid">
+		   			<a href="#" class="hi-icon hi-icon-archive glyphicon glyphicon-user"> </a>
+		   		</div>
+		   		<div  class="pro-top">
+		   			<h4>2017.04.15</h4>
+					<p>报名正式启动</p>
+				</div>
+			</div>
+			<div class="arrow-right col-sm-1 col-md-1 visible-sm visible-lg visible-md">
+
+			</div>
+			<div class="col-sm-4 col-md-4 ">
+				<div class="pro-grid">
+		   			<a href="#" class="hi-icon hi-icon-archive glyphicon glyphicon-pencil"> </a>
+		   		</div>
+		   		<div  class="pro-top">
+		   			<h4>2017.05.07</h4>
+		   			<p>宣讲大会,比赛正式开始
+				</div>
+			</div>
+			<div class="arrow-right col-sm-1 col-md-1 visible-sm visible-lg visible-md">
+
+			</div>
+			<div class="col-sm-3 col-xs-12 col-md-3 ">
+				<div class="pro-grid">
+		   			<a href="#" class="hi-icon hi-icon-archive glyphicon glyphicon-map-marker"> </a>
+		   		</div>
+		   		<div  class="pro-top">
+		   			<h4>2017.05.21</h4>
+		   			<p>现场评比并颁奖
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 大赛奖励 -->
+<div id="reward" class="team">
+	<div class="container">
+		<h3 class="tittle t-team">大赛奖励</h3>
+		<ul class="reward row center-block" >
+			<li class="col-lg-4 col-md-4 col-sm-4">
+				<div class="center-block">
+					<h3>物质奖励</h3>
+					<img class="center-block" src="images/mprize.gif">
+					<h4>获奖者获得丰厚的奖金作为奖励！</h4>
+					<h4>凡参赛者都可以获得开发板以及啤酒炸鸡！</h4>
+				</div>
+			</li>
+			<li class="col-lg-4 col-md-4 col-sm-4">
+				<div class="center-block">
+					<h3>荣誉奖励</h3>
+					<img class="center-block" src="images/hprize.gif">
+					<h4>参赛证、参赛纪念品最重要的获奖证书！</h4>
+					<h4>以及最重要的获奖证书！</h4>
+				</div>
+
+			</li>
+			<li class="col-lg-4 col-md-4 col-sm-4">
+				<div class="center-block">
+					<h3>自我提升</h3>
+					<img class="center-block" src="images/oprize.gif">
+					<h4>提升技术！</h4>
+					<h4>接触更多有趣的、志同道合的小伙伴！</h4>
+				</div>
+
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- 关于我们 -->
+<div id="team" class="gallery">
+	<div class="container">
+		<h3 class="tittle">关于我们</h3>
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div class="view view-eighth center-block">
+					<a class="b-link-stripe b-animate-go  thickbox"  title="杭电创客空间">
+						<img src="images/hdumaker.jpg" alt="杭电创客空间" />
+						<div class="mask">
+							<h4>杭电创客空间 </h4>
+							<p>
+								杭电创客空间是一个开放性社团，以工作室的形式为主题，以培养创新精神为目标。空间致力于成为一个人人都可以提出自己想法并可以与志同道合的人一起分享交流并付诸实践的平台
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div class="view view-eighth center-block">
+					<a class="b-link-stripe b-animate-go  thickbox"  title="西湖创客会">
+						<img src="images/xhckh.jpg" alt="西湖创客汇" />
+						<div class="mask">
+							<h4>西湖创客汇 </h4>
+							<p>西湖创客汇是浙江第一家创客空间，成立于2013年12月15日,现已有会员超过一千人,由工程师、设计师、产品经理、创业者和大学生组成,于2015年5月入选“杭州首批十七间众创空间”,成为国家级众创空间!
+
+						</div>
+					</a>
+				</div>
+
+			</div>
+
+			<!--<script src="js/jquery.chocolat.js"></script>-->
+			<!--<div class="clearfix"></div>-->
+
+		</div>
+	</div>
+</div>
+
+<!-- //team -->
+<!-- contact -->
+	<!--<div class="contact" id="contact">-->
+		<!--<div class="container">-->
+			<!--<h3 class="tittle">Contact</h3>-->
+
+			<!--<div class="col-md-7 contact-left">-->
+				<!--<h3>Contact Form</h3>-->
+				<!--<form>-->
+					<!--<input type="text" value="Name" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name';}" required="">-->
+					<!--<input type="text" value="Email" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Email';}" required="">-->
+					<!--<input type="text" value="Telephone" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Telephone';}" required="">-->
+					<!--<textarea onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>-->
+					<!--<input type="submit" value="Submit" >-->
+				<!--</form>-->
+			<!--</div>-->
+			<!--<div class="col-md-5 contact-left">-->
+				<!--<h3>Address</h3>-->
+				<!--<p>Corax </p>-->
+				<!--<ul>-->
+					<!--<li>Diamond street,</li>-->
+					<!--<li>260-14 City, Country</li>-->
+					<!--<li>+62 000-0000-00</li>-->
+					<!--<li>Phone : +1 078 4589 2456</li>-->
+					<!--<li>Mail : <a href="mailto:info@example.com">info@example.com</a></li>-->
+				<!--</ul>-->
+			<!--</div>-->
+			<!--<div class="clearfix"> </div>-->
+		<!--</div>-->
+	<!--</div>-->
+<!-- //contact -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-left">
+				<p>Copyright &copy; 杭电创客空间
+			</div>
+			<div class="footer-right">
+				<p>浙ICP备15027628号-2
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+
+<!-- Bootstrap core JavaScript-->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<!-- js -->
+		 <script src="js/bootstrap.js"></script>
+	<!-- js -->
+<!-- smooth scrolling -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+//			var defaults = {
+//			containerID: 'toTop',
+//			containerHoverID: 'toTopHover',
+//			scrollSpeed: 1200,
+//			easingType: 'linear'
+//			};
+
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+
+</body>
+</html>
