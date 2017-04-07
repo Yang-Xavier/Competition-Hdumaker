@@ -727,25 +727,25 @@ font-weight:600;
     line-height: 2em;
 	margin-bottom:35px;
 }
-.abt-left img{
+.abt-left img,.abt-right img{
 width:100%;
 }
 .abt-left-grid{
 float:left;
 width:30%;
 }
-.abt-right h4 {
+.abt-right h4 ,.abt-left h4{
     font-size: 28px;
     color: #8EC358;
     font-weight: 600;
 }
-.abt-right p {
+.abt-right p ,.abt-left p{
     color: #464646;
     font-size: 18px;
     line-height: 2em;
     margin: 20px 0;
 }
-.abt-right p:nth-child(3){
+.abt-right p:nth-child(3),.abt-left p:nth-child(3){
 margin:0;
 }
 /*-- //about --*/
@@ -1247,10 +1247,10 @@ background: url(../images/img-sprite.png) no-repeat -78px 0px;
 	.about h5 {
 	  font-size: 20px;
 	  }
-	.abt-right h4 {
+	.abt-right h4 ,.abt-left h4{
 	  font-size: 25px;
 	  }
-	.abt-right p {
+    .abt-right p,.abt-left p {
 	  font-size: 16px;
 	  margin: 12px 0;
 	}
@@ -1349,9 +1349,9 @@ background: url(../images/img-sprite.png) no-repeat -78px 0px;
 	}
 	.abt-left {
 	  float: left;
-	  width: 52%;
+	  width: 100%;
 	}
-	.abt-right h4 {
+	.abt-right h4 ,.abt-left h4 {
 	  font-size: 22px;
 	}
 	.services-left {
@@ -1438,16 +1438,16 @@ background: url(../images/img-sprite.png) no-repeat -78px 0px;
 	}
 	.abt-left {
 	  float: left;
-	  width: 50%;
 	}
-	.abt-right h4 {
+	.abt-right h4,.abt-left h4 {
 	  font-size: 22px;
 	}
 	h3.tittle, h2.tittle {
 	  margin-bottom: 25px;
 	}
 	.about h5 {
-	  margin-bottom: 30px;
+        font-size: 1em;
+	    margin-bottom: 30px;
 	}
 	.services {
 	  padding-top: 55px;
@@ -1609,12 +1609,11 @@ background: url(../images/img-sprite.png) no-repeat -78px 0px;
 	h3.tittle:after, h3.tittle:before, h2.tittle:after, h2.tittle:before {
 	  width: 48px;
 	}
-	.abt-right h4 {
+	.abt-right h4,.abt-left h4 {
 	  font-size: 18px;
 	}
-	.abt-left {
+	.abt-left,.abt-left {
 	  float: left;
-	  width: 47%;
 	}
 	.services-left {
 	  padding: 0 10px;
@@ -1686,7 +1685,7 @@ background: url(../images/img-sprite.png) no-repeat -78px 0px;
         padding-top: 30px;
         padding-bottom: 100px;
     }
-	.abt-right {
+	.abt-right,.abt-left {
 	  padding: 0 10px;
 	}
 	.col-md-5.contact-left {
@@ -1857,7 +1856,7 @@ background: url(../images/img-sprite.png) no-repeat -78px 0px;
 	.abt-right {
 	  margin-top: 25px;
 	}
-	.abt-right p {
+	.abt-right p,.abt-left p {
 	  line-height: 1.8em;
     }
 	.services {

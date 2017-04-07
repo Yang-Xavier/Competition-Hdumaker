@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="arduino HDUMaker" />
+    <meta name="author" content="Xavier_Yang">
 
     <title>参赛报名</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -32,8 +33,6 @@
             <label>学校</label>
             <select class="form-control" name="school">
                 <option>请选择学校</option>
-                <option>学校名称</option>
-                <option>杭州电子科技大学</option>
             </select>
         </div>
         <div class="form-group">
@@ -97,6 +96,9 @@
         $('#teamMember').change(function(){
             var num=$(this).val();
             if(num<=1||num>5){
+                if(num==1){
+                    $('#dynamicInput').html(' ');
+                }
                 return;
             }
             var html=[];
@@ -107,6 +109,14 @@
 
         })
 
+        $.ajax({
+            url:'schools.json',
+            type:'GET',
+            success:function(data){
+                var schools=eval('('+data+')');
+                $('select').html($('select').html()+createSelect(schools));
+            }
+        })
 
         $('form').bootstrapValidator({
             message: 'This value is not valid',
@@ -178,6 +188,20 @@
         })
 
     })
+    function createSelect(schools){
+        var options=[];
+        try{
+            schools.forEach(function(school){
+                options.push('<option>'+school+'</option>')
+            })
+        }catch(e){
+            schools.toArray().forEach(function(school){
+                options.push('<option>'+school+'</option>')
+            });
+        }
+        return options.join(' ');
+    }
+
     function createForm(i){
         var html='<div class="form-group">' +
             ' <h4>第'+i+'位小伙伴</h4> ' +
