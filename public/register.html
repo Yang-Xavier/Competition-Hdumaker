@@ -32,6 +32,7 @@
             <label>学校</label>
             <select class="form-control" name="school">
                 <option>请选择学校</option>
+                <option>学校名称</option>
                 <option>杭州电子科技大学</option>
             </select>
         </div>
@@ -240,9 +241,20 @@
         }
 
 
-        data=data.toString().replace('>','%3e');
+        data=JSON.stringify(data).replace('>','%3e');
 
-        console.log(data)
+        $.ajax({
+            type:'POST',
+            url:'/register',
+            data:'data='+data,
+            success:function(data){
+                if(data==='ok'){
+                    alert('报名成功！');
+                    location.reload();
+                }
+            },
+            async:true
+        })
 
     }
 </script>
