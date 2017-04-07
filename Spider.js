@@ -50,8 +50,9 @@ function start() {
 }
 
 function writeToFile(){
-    var file='schools.json'
-    var data=iconv.encode(JSON.stringify(SCHOOLS),'gbk');
+    var file='public/schools.json'
+    // var data=iconv.encode(JSON.stringify(SCHOOLS),'gbk');
+    var data=JSON.stringify(SCHOOLS)
     fs.appendFile(file,data,function (err) {
         if(err)
             console.log(err)

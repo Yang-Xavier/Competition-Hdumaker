@@ -113,7 +113,7 @@
             url:'schools.json',
             type:'GET',
             success:function(data){
-                var schools=eval('('+data+')');
+                var schools=eval(data);
                 $('select').html($('select').html()+createSelect(schools));
             }
         })
@@ -188,6 +188,7 @@
         })
 
     })
+
     function createSelect(schools){
         var options=[];
         try{
